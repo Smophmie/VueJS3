@@ -3,14 +3,21 @@
   <!-- On affiche le template HelloWorld et on lui passe la variable user -->
   <HelloWorld :user="user"/>
 
-  <!-- Affichage de la div à condition que l'âge saisi soit supérieur à 15 -->
+  <!-- Affichage de la div selon des conditions d'âge -->
   <div
     v-if="user.age>15"
     >
-    Mon âge
+    Vous avez plus de 15 ans.
   </div>
 
-  <input type="text" v-model="user.name">
+  <div
+    v-else
+    >
+    Vous avez 15 ans ou moins.
+  </div>
+
+  <!-- Evènement à la modification de l'input : on lance la fonction display -->
+  <input type="text" v-model="user.name" @input="display">
   <input type="text" v-model="user.age">
 
 </template>
@@ -32,7 +39,6 @@
     console.log(user);
   }
 
-  display();
 
 </script>
 
