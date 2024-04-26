@@ -1,15 +1,15 @@
 <script setup>
 
 // On importe le template
-import HelloWorld from "../components/HelloWorld.vue";
+import UserInfos from "../components/UserInfos.vue";
 
 </script>
 
 <template>
     <h1>Accueil</h1>
 
-    <!-- On affiche le template HelloWorld -->
-    <HelloWorld/>
+    <!-- On affiche le template UserInfos -->
+    <UserInfos/>
 
 </template>
 
