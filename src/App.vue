@@ -14,9 +14,9 @@
       >{{ user.age }}</p>
     </template>
 
-    <template v-slot:paragraph>
+    <!-- <template v-slot:paragraph>
       {{ sentence }}
-    </template>
+    </template> -->
 
   </HelloWorld>
 
@@ -44,16 +44,21 @@
   // On importe le template
   import HelloWorld from "./components/HelloWorld.vue";
 
-  import {computed, ref} from "vue";
+  import {computed, watch, ref} from "vue";
 
   // On crée une computed ref utilisant les valeurs de age et name même si elles sont modifiées
-  const sentence = computed( () => {
-    return "Je m'appelle " + name.value + " et j'ai " + age.value + " ans.";
-  })
+  // const sentence = computed( () => {
+  //   return "Je m'appelle " + name.value + " et j'ai " + age.value + " ans.";
+  // })
 
   const name = ref("Sophie");
 
   const age = ref(28);
+
+  // On crée une fonction watch qui surveille l'évolution de la variable name et qui retourne sa valeur actuelle et la valeur qu'elle avait auparavant
+  watch(name, (newValue, oldValue) => {
+    console.log(newValue, oldValue);
+  })
 
   import {reactive} from "vue";
   
