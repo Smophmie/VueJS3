@@ -8,6 +8,8 @@
   <slot name="age">
   </slot>
 
+  <slot name="paragraph"></slot>
+
 </template>
 
 <script setup>
