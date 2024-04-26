@@ -1,5 +1,6 @@
 <template>
   <HelloWorld :sub-title="subTitle"/>
+  <input type="text" v-model="subTitle">
 </template>
 
 <script setup>
