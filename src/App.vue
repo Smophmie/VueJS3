@@ -8,22 +8,25 @@
     </template>
 
     <template v-slot:age>
-      <p>{{ user.age }}</p>
+      <!-- Utilisation d'une classe de style sous condition d'âge -->
+      <p
+        :class="[user.age>=18 ? 'text-green': 'text-red']"
+      >{{ user.age }}</p>
     </template>
     
   </HelloWorld>
 
   <!-- Affichage de la div selon des conditions d'âge -->
   <div
-    v-if="user.age>15"
+    v-if="user.age>=18"
     >
-    Vous avez plus de 15 ans.
+    Vous êtes majeur.
   </div>
 
   <div
     v-else
     >
-    Vous avez 15 ans ou moins.
+    Vous êtes mineur.
   </div>
 
   <!-- Evènement à la modification de l'input : on lance la fonction display -->
@@ -53,4 +56,13 @@
 </script>
 
 <style scoped>
+
+  .text-red {
+    color:indianred;
+  }
+
+  .text-green{
+    color:green;
+  }
+
 </style>
