@@ -1,7 +1,17 @@
 <template>
 
   <!-- On affiche le template HelloWorld et on lui passe la variable user -->
-  <HelloWorld :user="user"/>
+  <HelloWorld>
+    <!-- Slots content -->
+    <template v-slot:name>
+      <p>{{ user.name }}</p>
+    </template>
+
+    <template v-slot:age>
+      <p>{{ user.age }}</p>
+    </template>
+    
+  </HelloWorld>
 
   <!-- Affichage de la div selon des conditions d'âge -->
   <div

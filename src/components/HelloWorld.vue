@@ -1,13 +1,18 @@
 <template>
 
   <h1>Hello world!</h1>
-  <p>{{ props.user.name }} {{ props.user.age }}</p>
+
+  <!-- On appelle les slots du parent en utilisant leur nom -->
+  <slot name="name">
+  </slot>
+  <slot name="age">
+  </slot>
 
 </template>
 
 <script setup>
 
-  const props = defineProps(["user"]);
+ 
 
 </script>
 
