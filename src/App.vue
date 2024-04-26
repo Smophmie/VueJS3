@@ -6,7 +6,9 @@
 <script setup>
   import HelloWorld from "./components/HelloWorld.vue";
 
-  const subTitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+  import {ref} from "vue";
+
+  const subTitle = ref("Lorem ipsum dolor sit amet consectetur adipisicing elit.");
 </script>
 
 <style scoped>
